@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <!-- http://shpargalkablog.ru/2013/08/checked.html  -->
+
+    <style>
+      body { 
+        background-color: lightgrey;
+      }
+    </style>
+<body>
+
+<h1>Show a Time Input Control</h1>
+
+Первая форма:
+<form>
+    <fieldset class="shest1">
+      <legend><input type="checkbox"> 9:00-10:00</legend>
+      <label>9:00<input type="checkbox"></label>
+      <label>9:15<input type="checkbox"></label>
+      <label>9:30<input type="checkbox"></label>
+      <label>9:45<input type="checkbox"></label>
+    </fieldset>
+    <fieldset class="shest1">
+      <legend><input type="checkbox"> Check all</legend>
+      <label><input type="checkbox"></label>
+      <label><input type="checkbox"></label>
+      <label><input type="checkbox"></label>
+    </fieldset>
+</form>
+Вторая форма:
+<form>
+    <fieldset class="shest1">
+      <legend><input type="checkbox"> 9:00-19:00</legend>
+      <label> 9:00</label><input type="checkbox">
+      <label>10:00</label><input type="checkbox">
+      <label>11:00</label><input type="checkbox">
+      <label>17:00</label><input type="checkbox">
+      <label>18:00</label><input type="checkbox">
+      <label>19:00</label><input type="checkbox">
+    </fieldset>
+    <fieldset class="shest1">
+      <legend><input type="checkbox"> Check all</legend>
+      <label><input type="checkbox"></label>
+      <label><input type="checkbox"></label>
+      <label><input type="checkbox"></label>
+    </fieldset>
+</form>
+
+<script>
+for (var u = document.getElementsByTagName("form"), i = 0; i < u.length; i++)
+  u[i].onmouseover = function (b) {
+    l = u[i].getElementsByTagName("fieldset");
+    for (var k = 0; k < l.length; k++)
+      if (l[k].className == "shest1") l[k].onmouseover = function (a) {
+        var main1 = document.querySelector('form:nth-of-type('+(b+1)+') fieldset:nth-of-type('+(a+1)+') legend [type="checkbox"]'),
+        all1 = document.querySelectorAll('form:nth-of-type('+(b+1)+') fieldset:nth-of-type('+(a+1)+') label [type="checkbox"]');
+        for(var j=0; j<all1.length; j++)
+          all1[j].onclick = function() {
+            var allChecked1 = document.querySelectorAll('form:nth-of-type('+(b+1)+') fieldset:nth-of-type('+(a+1)+') label [type="checkbox"]:checked').length;
+            main1.checked = allChecked1 == all1.length;
+            main1.indeterminate = allChecked1 > 0 && allChecked1 < all1.length;
+          }
+        main1.onchange = function() {
+          for(var j=0; j<all1.length; j++)
+            all1[j].checked = this.checked;
+        }
+      }(k)
+  }(i)
+</script>
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <!-- http://shpargalkablog.ru/2013/08/checked.html  -->
+
+    <style>
+      body { 
+        background-color: lightgrey;
+      }
+    </style>
+
+
+
+<body>
+
+<h1>Show a Time Input Control</h1>
+
+Первая форма:
+<form>
+    <input type="checkbox" onClick="toggle(this)" /> Toggle All<br/>
+    
+    <input type="checkbox" name="foo" value="bar1"> Bar 1<br/>
+    <input type="checkbox" name="foo" value="bar2" disabled checked> Bar 2<br/>
+    <input type="checkbox" name="foo" value="bar3"> Bar 3<br/>
+    <input type="checkbox" name="foo" value="bar4"> Bar 4<br/>
+</form>
+
+
+<script>
+    function toggle(source) {
+        checkboxes = document.getElementsByName('foo');
+        for(var i=0, n=checkboxes.length; i<n; i++) {
+            checkboxes[i].checked = source.checked;
+        }
+    }
+</script>
+
+    
+
+    
+
+</body>
+</html>

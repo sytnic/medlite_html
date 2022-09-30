@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <!-- http://shpargalkablog.ru/2013/08/checked.html  -->
+
+    <style>
+      body { 
+        background-color: lightgrey;
+      }
+    </style>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<body>
+
+<h1>Show a Time Input Control</h1>
+
+Первая форма:
+<form>
+    <input type="checkbox" id="selectAll" /> Select All
+    <br>
+    
+               <input type="checkbox" disabled />           <br>
+               <input type="checkbox" />Not disabled        <br>
+               <input type="checkbox" />Not disabled        <br>
+               <input type="checkbox" checked disabled />   <br>
+               <input type="checkbox" />Not disabled        <br>
+
+    
+    
+</form>
+
+<script>
+    /*
+    $('#selectAll').change(function() {
+        $(':checkbox:enabled').prop('checked', this.checked);
+    });
+    */
+    $('#selectAll').change(function() {
+        $(':checkbox:not(:disabled)').prop('checked', this.checked);
+    });
+</script>
+
+    
+
+</body>
+</html>

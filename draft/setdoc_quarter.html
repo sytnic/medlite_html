@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<meta charset="UTF-8">
+<title>Replace SQL</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="css/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    
+</style>
+<script src=""></script>
+
+<body class="w3-light-grey">
+
+<!-- Navigation -->    
+<div class="w3-bar w3-black">
+    <a href="index.html" class="w3-bar-item w3-button">Home </a>        
+</div>
+
+<!-- Main Div -->
+<div>
+
+<!-- Sidebar -->
+<div class="w3-bar-block w3-blue-grey w3-mobile" style="width:20%; float:left; height:100%; padding-bottom:50px;">
+    <p class="w3-bar-item w3-text-black">Admin Menu:</p>
+    <a href="clients.html" class="w3-bar-item w3-button ">Requests of clients</a>
+    <span class="w3-bar-item w3-text-black">Configure of docs: </span>
+      <a href="specials.html" class="w3-bar-item w3-button">Specializations</a>
+      <a href="docs_specs.html" class="w3-bar-item w3-button ">Doc's time</a>
+      <a href="calendar.html" class="w3-bar-item w3-button ">Calendar of all Docs</a>
+      <a href="#" class="w3-bar-item w3-button ">Link</a>
+</div>
+
+<!-- Main Content -->
+<div>
+
+    <div class="w3-container" style="float:left;">
+        <h2>Configure Doc Quarter</h2>
+        <p>Please, configure this.</p>
+
+        <p><b>A Spec</b></p>
+        <p><b>Matter Doc</b></p>
+        <p><b>16, Aug</b></p>
+    </div>
+
+    <div class="w3-container w3-light-grey  w3-mobile" style="width:80%; float:left;">      
+        Первая форма:
+        <form>
+            <fieldset class="shest1">
+            <legend><input type="checkbox"> 9:00-10:00</legend>
+            <label>9:00<input type="checkbox"></label>
+            <label>9:15<input type="checkbox"></label>
+            <label>9:30<input type="checkbox"></label>
+            <label>9:45<input type="checkbox"></label>
+            </fieldset>
+            <fieldset class="shest1">
+            <legend><input type="checkbox"> Check all</legend>
+            <label><input type="checkbox"></label>
+            <label><input type="checkbox"></label>
+            <label><input type="checkbox"></label>
+            </fieldset>
+        </form>
+        
+        
+                        
+    </div>
+
+</div>
+<!-- End of Main Content -->
+
+  <!-- End of Main Div -->
+</div>
+
+<!-- Footer -->    
+<div class="w3-container w3-bar w3-black " style="margin-top: 860px; ">
+    <p><small>(c) 2022, greycrud</small></p>
+</div>
+
+<script>
+    for (var u = document.getElementsByTagName("form"), i = 0; i < u.length; i++)
+      u[i].onmouseover = function (b) {
+        l = u[i].getElementsByTagName("fieldset");
+        for (var k = 0; k < l.length; k++)
+          if (l[k].className == "shest1") l[k].onmouseover = function (a) {
+            var main1 = document.querySelector('form:nth-of-type('+(b+1)+') fieldset:nth-of-type('+(a+1)+') legend [type="checkbox"]'),
+            all1 = document.querySelectorAll('form:nth-of-type('+(b+1)+') fieldset:nth-of-type('+(a+1)+') label [type="checkbox"]');
+            for(var j=0; j<all1.length; j++)
+              all1[j].onclick = function() {
+                var allChecked1 = document.querySelectorAll('form:nth-of-type('+(b+1)+') fieldset:nth-of-type('+(a+1)+') label [type="checkbox"]:checked').length;
+                main1.checked = allChecked1 == all1.length;
+                main1.indeterminate = allChecked1 > 0 && allChecked1 < all1.length;
+              }
+            main1.onchange = function() {
+              for(var j=0; j<all1.length; j++)
+                all1[j].checked = this.checked;
+            }
+          }(k)
+      }(i)
+</script>
+
+</body>
+</html>
+
+
