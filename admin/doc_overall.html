@@ -26,32 +26,35 @@
         <p class="w3-bar-item w3-text-black">Admin Menu:</p>
         <a href="#" class="w3-bar-item w3-button">Requests of clients</a>
         <span class="w3-bar-item w3-text-black">Configure of docs: </span>
-        <a href="#" class="w3-bar-item w3-button w3-light-grey">Specializations</a>
+        <a href="#" class="w3-bar-item w3-button ">Specializations</a>
         <a href="#" class="w3-bar-item w3-button ">Docs</a>
     </div>
 
     <!-- Main Content -->
-    <div class="w3-container w3-light-grey w3-mobile" style="width:80%; float:left;">
+    <div class="w3-container" style="width:50%; float:left;">
+        <h2>Overall for doc</h2>
+        <p>Please, configure this.</p>
 
-        <h2>Spec Edit</h2>
-        <p>Please, configure this.</p>  
-        
-        <div>
-            <form action="#" method="post" class="w3-container w3-card w3-light-grey w3-text-teal w3-margin">
-                <h2 class="w3-center">Spec Edit</h2>
-                
-                Spec:<br>
-                <input class="w3-input w3-border" name="first" type="text" placeholder="Spec name">
+        <div class="w3-container w3-light-grey w3-responsive w3-mobile" style="width:80%; float:left;">      
+            
+            <form action="#" method="post" class="w3-container w3-card w3-light-grey w3-text-teal w3-margin">        
+                    <input class="w3-radio" type="radio" name="activity" value="active" checked>
+                    <label>Active doc</label>
+                    <br>
+                    <input class="w3-radio" type="radio" name="activity" value="not_active">
+                    <label>Not Active doc</label>
+                    <br>
 
-                <p>
-                  <input type="submit" name="submit" class="w3-button w3-teal" value="Save Changes">
-                </p>
-                <hr style="height: 1px; background-color: darkgrey;">
-                <p>
-                  <input type="submit" name="submit" class="w3-button w3-border w3-border-red" value="Delete All">
-                </p>
+                    <p>
+                    <input type="submit" name="submit" class="w3-button w3-teal" value="Save Changes">
+                    </p>            
             </form>
-        </div>          
+
+            <p><a href="doc_edit.html">Edit doc</a></p>
+
+            <p><a href="doc_time.html">Edit doc's time</a></p>
+
+        </div>
                         
     </div> <!-- End of Main Content -->
 
@@ -65,5 +68,3 @@
 
 </body>
 </html>
-
-
