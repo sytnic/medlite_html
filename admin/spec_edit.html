@@ -47,10 +47,14 @@
                   <input type="submit" name="submit" class="w3-button w3-teal" value="Save Changes">
                 </p>
                 <hr style="height: 1px; background-color: darkgrey;">
+                
                 <p>
-                  <input type="submit" name="submit" class="w3-button w3-border w3-border-red" value="Delete All">
+                  <a href="delete_page.php?page=<?php  ?>" class="w3-button w3-border w3-border-red"
+                     onclick="return confirm('Are you sure?');">Delete</a>
                 </p>
             </form>
+
+            
         </div>          
                         
     </div> <!-- End of Main Content -->
